@@ -7,6 +7,10 @@ class Homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material();
+    return Scaffold(
+        appBar: AppBar(
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+    ));
   }
 }
