@@ -8,9 +8,36 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-      backgroundColor: Colors.transparent,
-      elevation: 0, // Opacity
-    ));
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0, // Opacity
+        leading: IconButton(
+            onPressed: () {}, icon: SvgPicture.asset("assets/icons/menu.svg")),
+        title: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          SvgPicture.asset("assets/icons/Location.svg"),
+          const SizedBox(width: defaultPadding / 2),
+          Text("Jalan Sunda, Bandung",
+              style: Theme.of(context).textTheme.displayMedium)
+        ]),
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: SvgPicture.asset("assets/icons/Notification.svg"))
+        ],
+      ),
+      body: Container(
+        child: Column(
+          children: [
+            Text(
+              "Explore",
+              style: Theme.of(context)
+                  .textTheme
+                  .headline4!
+                  .copyWith(fontWeight: FontWeight.w500, color: Colors.black),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
