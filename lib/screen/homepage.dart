@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:baju_app/root.dart';
+import 'package:baju_app/compoments/search_form.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -25,49 +26,22 @@ class Homepage extends StatelessWidget {
               icon: SvgPicture.asset("assets/icons/Notification.svg"))
         ],
       ),
-      body: Container(
-        child: Column(
-          children: [
-            Text(
-              "Explore",
-              style: Theme.of(context)
-                  .textTheme
-                  .headline4!
-                  .copyWith(fontWeight: FontWeight.w500, color: Colors.black),
-            ),
-            Text("Best Outfit for You", style: TextStyle(fontSize: 18)),
-            Form(
-              child: TextFormField(
-                decoration: InputDecoration(
-                  hintText: "Search item",
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: outlineInputBorder,
-                  enabledBorder: outlineInputBorder,
-                  focusedBorder: outlineInputBorder,
-                  prefixIcon: Padding(
-                    padding: const EdgeInsets.all(12),
-                    child: SvgPicture.asset("assets/icons/Search.svg"),
-                  ), // Search
-                  suffixIcon: SizedBox(
-                    width: 48,
-                    height: 48,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(primary: primaryColor),
-                      child: SvgPicture.asset("assets/icons/Filter.svg"),
-                    ), // Button
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
+      body: Column(
+        children: [
+          Text(
+            "Explore",
+            style: Theme.of(context)
+                .textTheme
+                .headline4!
+                .copyWith(fontWeight: FontWeight.w500, color: titleColor),
+          ),
+          const Text("Best Outfit for You", style: TextStyle(fontSize: 18)),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: defaultPadding),
+            child: SearchForm(),
+          ),
+        ],
       ),
     );
   }
 }
-
-const OutlineInputBorder outlineInputBorder = OutlineInputBorder(
-    borderRadius: BorderRadius.all(Radius.circular(defaultBorderRadius)),
-    borderSide: BorderSide.none);
