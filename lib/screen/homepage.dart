@@ -5,6 +5,11 @@ import 'package:baju_app/root.dart';
 class Homepage extends StatelessWidget {
   const Homepage({Key? key}) : super(key: key);
 
+  const outlineInputBorder = const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(defaultBorderRadius)),
+                  borderSide: BorderSide.none
+                );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +22,7 @@ class Homepage extends StatelessWidget {
           SvgPicture.asset("assets/icons/Location.svg"),
           const SizedBox(width: defaultPadding / 2),
           Text("Jalan Sunda, Bandung",
-              style: Theme.of(context).textTheme.subtitle)
+              style: Theme.of(context).textTheme.subtitle2)
         ]),
         actions: [
           IconButton(
@@ -35,10 +40,15 @@ class Homepage extends StatelessWidget {
                   .headline4!
                   .copyWith(fontWeight: FontWeight.w500, color: Colors.black),
             ),
-            Text(
-              "Best Outfit for You",
-              style: Theme.of(context)
-                  .textTheme.subtitle
+            Text("Best Outfit for You", style: TextStyle(fontSize: 18)),
+            Form(
+              child: TextFormField(
+                filled: true,
+                fillColor: Colors.white,
+                border: outlineInputBorder,
+                enabledBorder: outlineInputBorder,
+                focusedBorder: outlineInputBorder,
+              );
             )
           ],
         ),
