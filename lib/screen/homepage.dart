@@ -5,11 +5,6 @@ import 'package:baju_app/root.dart';
 class Homepage extends StatelessWidget {
   const Homepage({Key? key}) : super(key: key);
 
-  const outlineInputBorder = const OutlineInputBorder(
-    borderRadius: BorderRadius.all(Radius.circular(defaultBorderRadius)),
-    borderSide: BorderSide.none
-  );
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,31 +38,36 @@ class Homepage extends StatelessWidget {
             Text("Best Outfit for You", style: TextStyle(fontSize: 18)),
             Form(
               child: TextFormField(
-                filled: true,
-                fillColor: Colors.white,
-                border: outlineInputBorder,
-                enabledBorder: outlineInputBorder,
-                focusedBorder: outlineInputBorder,
-                prefixIcon: Padding(
-                  padding: const EdgeInsets.all(12),
-                  child: SvgPicture.asset("assets/icons/Search.svg"),
-                ), // Search
-                suffixIcon: SizedBox(
-                  width: 48,
-                  height: 48,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    child: SvgPicture.asset("assets/icons/Filter.svg"),
-                    style: ElevatedButton.styleForm(
-                      primary: primaryColor
-                    ),
-                  ) // Button
-                )
-              );
-            )
+                decoration: InputDecoration(
+                  hintText: "Search item",
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: outlineInputBorder,
+                  enabledBorder: outlineInputBorder,
+                  focusedBorder: outlineInputBorder,
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.all(12),
+                    child: SvgPicture.asset("assets/icons/Search.svg"),
+                  ), // Search
+                  suffixIcon: SizedBox(
+                    width: 48,
+                    height: 48,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(primary: primaryColor),
+                      child: SvgPicture.asset("assets/icons/Filter.svg"),
+                    ), // Button
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 }
+
+const OutlineInputBorder outlineInputBorder = OutlineInputBorder(
+    borderRadius: BorderRadius.all(Radius.circular(defaultBorderRadius)),
+    borderSide: BorderSide.none);
