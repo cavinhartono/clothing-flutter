@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:baju_app/root.dart';
 import 'package:baju_app/models/category.dart';
+import 'package:baju_app/models/product.dart';
 import 'package:baju_app/compoments/category.dart';
 import 'package:baju_app/compoments/search_form.dart';
+import 'package:baju_app/compoments/link.dart';
+import 'package:baju_app/compoments/product_list.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -61,39 +64,43 @@ class Homepage extends StatelessWidget {
                 ),
               ),
             ),
-            Row(children: [
-              Text("New Arrival",
-                  style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w500,
-                      )),
-              Link(
-                title: "See All",
-                onClick: () {},
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: defaultPadding),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("New Arrival",
+                        style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w500,
+                            )),
+                    Link(
+                      title: "See All",
+                      onClick: () {},
+                    ),
+                  ]),
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: List.generate(
+                    products.length,
+                    (index) => Padding(
+                          padding: const EdgeInsets.only(right: defaultPadding),
+                          child: ProductList(
+                            title: products[index].title,
+                            price: products[index].price,
+                            bgColor: products[index].bgColor,
+                            image: products[index].image,
+                            onClick: () {},
+                          ),
+                        )),
               ),
-            ])
+            ),
           ],
         ),
       ),
-    );
-  }
-}
-
-class Link extends StatelessWidget {
-  const Link({
-    super.key,
-    required this.title,
-    required this.onClick,
-  });
-
-  final String title;
-  final VoidCallback onClick;
-
-  @override
-  Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: onClick,
-      child: Text(title, style: const TextStyle(color: Colors.black54)),
     );
   }
 }
