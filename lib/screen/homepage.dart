@@ -48,6 +48,7 @@ class Homepage extends StatelessWidget {
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
+                // Foreach dari models/category
                 children: List.generate(
                   categories.length,
                   (index) => Padding(
@@ -59,10 +60,40 @@ class Homepage extends StatelessWidget {
                   ),
                 ),
               ),
-            )
+            ),
+            Row(children: [
+              Text("New Arrival",
+                  style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500,
+                      )),
+              Link(
+                title: "See All",
+                onClick: () {},
+              ),
+            ])
           ],
         ),
       ),
+    );
+  }
+}
+
+class Link extends StatelessWidget {
+  const Link({
+    super.key,
+    required this.title,
+    required this.onClick,
+  });
+
+  final String title;
+  final VoidCallback onClick;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: onClick,
+      child: Text(title, style: const TextStyle(color: Colors.black54)),
     );
   }
 }
