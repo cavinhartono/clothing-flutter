@@ -57,9 +57,7 @@ class Homepage extends StatelessWidget {
                   (index) => Padding(
                     padding: const EdgeInsets.only(right: defaultPadding),
                     child: Category(
-                        icon: categories[index].icon,
-                        title: categories[index].title,
-                        onClick: () {}),
+                        title: categories[index].title, onClick: () {}),
                   ),
                 ),
               ),
