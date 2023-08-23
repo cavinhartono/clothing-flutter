@@ -39,21 +39,81 @@ class ProductDetail extends StatelessWidget {
                     topLeft: Radius.circular(defaultBorderRadius * 3),
                     topRight: Radius.circular(defaultBorderRadius * 3)),
               ),
-              child: Row(children: [
+              child:
+                  Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 Expanded(
                     child: Text(product.title,
                         style: Theme.of(context).textTheme.headline6)),
                 const SizedBox(height: defaultPadding),
                 Text("IDR. {$product.price.toString()}",
                     style: Theme.of(context).textTheme.headline6),
+                const Padding(
+                    padding: EdgeInsets.symmetric(vertical: defaultPadding),
+                    child: Text("Deskripsi")),
+                const SizedBox(height: defaultPadding / 2),
+                Row(
+                  children: [
+                    ColorDot(
+                        isActive: false,
+                        color: const Color(0xffbee8ea),
+                        onClick: () {}),
+                    ColorDot(
+                        isActive: true,
+                        color: const Color(0xff141b4a),
+                        onClick: () {}),
+                    ColorDot(
+                        isActive: false,
+                        color: const Color(0xffb4e5c3),
+                        onClick: () {}),
+                  ],
+                ),
+                Center(
+                  child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: defaultPadding / 2,
+                          vertical: defaultPadding),
+                      child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: primaryColor,
+                              shape: const StadiumBorder()),
+                          child: const Text("Add to Cart"))),
+                )
               ]),
             ),
           ),
-          const Padding(
-              padding: EdgeInsets.symmetric(vertical: defaultPadding),
-              child: Text("Deskripsi"))
         ],
       ),
+    );
+  }
+}
+
+class ColorDot extends StatelessWidget {
+  const ColorDot({
+    super.key,
+    required this.color,
+    required this.isActive,
+    required this.onClick,
+  });
+
+  final Color color;
+  final bool isActive;
+  final VoidCallback onClick;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onClick,
+      child: Container(
+          padding: const EdgeInsets.all(defaultPadding / 4),
+          decoration: BoxDecoration(
+              border: Border.all(
+                  color: isActive ? primaryColor : Colors.transparent),
+              shape: BoxShape.circle),
+          child: CircleAvatar(
+            radius: 10,
+            backgroundColor: color,
+          )),
     );
   }
 }
