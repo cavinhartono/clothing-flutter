@@ -1,3 +1,4 @@
+import 'package:baju_app/screen/product_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:baju_app/root.dart';
@@ -91,7 +92,13 @@ class Homepage extends StatelessWidget {
                             price: products[index].price,
                             bgColor: products[index].bgColor,
                             image: products[index].image,
-                            onClick: () {},
+                            onClick: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ProductDetail(
+                                          product: products[index])));
+                            },
                           ),
                         )),
               ),
