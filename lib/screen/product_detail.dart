@@ -39,51 +39,54 @@ class ProductDetail extends StatelessWidget {
                     topLeft: Radius.circular(defaultBorderRadius * 3),
                     topRight: Radius.circular(defaultBorderRadius * 3)),
               ),
-              child:
-                  Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Expanded(
-                    child: Text(product.title,
-                        style: Theme.of(context).textTheme.headline6)),
-                const SizedBox(height: defaultPadding),
-                Text("IDR. {$product.price.toString()}",
-                    style: Theme.of(context).textTheme.headline6),
-                const Padding(
-                    padding: EdgeInsets.symmetric(vertical: defaultPadding),
-                    child: Text("Deskripsi")),
-                const SizedBox(height: defaultPadding / 2),
-                Row(
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    ColorDot(
-                        isActive: false,
-                        color: const Color(0xffbee8ea),
-                        onClick: () {}),
-                    ColorDot(
-                        isActive: true,
-                        color: const Color(0xff141b4a),
-                        onClick: () {}),
-                    ColorDot(
-                        isActive: false,
-                        color: const Color(0xffb4e5c3),
-                        onClick: () {}),
-                  ],
-                ),
-                Center(
-                  child: Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: defaultPadding / 2,
-                          vertical: defaultPadding),
-                      child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: primaryColor,
-                              shape: const StadiumBorder()),
-                          child: const Text("Add to Cart"))),
-                )
-              ]),
+                    Container(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: defaultPadding / 2),
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(product.title,
+                                  style: Theme.of(context).textTheme.headline6),
+                              Text("IDR. ${product.price.toString()}",
+                                  style: Theme.of(context).textTheme.headline6),
+                            ])),
+                    const Padding(
+                        padding:
+                            EdgeInsets.symmetric(vertical: defaultPadding / 2),
+                        child: Text("Deskripsi")),
+                    Row(
+                      children: [
+                        ColorDot(
+                            isActive: false,
+                            color: const Color(0xffbee8ea),
+                            onClick: () {}),
+                        ColorDot(
+                            isActive: true,
+                            color: const Color(0xff141b4a),
+                            onClick: () {}),
+                        ColorDot(
+                            isActive: false,
+                            color: const Color(0xffb4e5c3),
+                            onClick: () {}),
+                      ],
+                    ),
+                  ]),
             ),
           ),
         ],
       ),
+      bottomNavigationBar: Container(
+          width: double.infinity,
+          padding: const EdgeInsets.symmetric(
+              horizontal: defaultPadding / 2, vertical: defaultPadding),
+          child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: primaryColor, shape: const StadiumBorder()),
+              child: const Text("Add to Cart"))),
     );
   }
 }
