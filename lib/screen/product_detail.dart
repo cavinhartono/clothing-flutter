@@ -80,6 +80,7 @@ class ProductDetail extends StatelessWidget {
       ),
       bottomNavigationBar: Container(
           width: double.infinity,
+          color: Colors.white,
           padding: const EdgeInsets.symmetric(
               horizontal: defaultPadding / 2, vertical: defaultPadding),
           child: ElevatedButton(
