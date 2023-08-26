@@ -33,8 +33,8 @@ class ProductList extends StatelessWidget {
                 width: double.infinity,
                 decoration: BoxDecoration(
                     color: bgColor,
-                    borderRadius:
-                        BorderRadius.all(Radius.circular(defaultBorderRadius))),
+                    borderRadius: const BorderRadius.all(
+                        Radius.circular(defaultBorderRadius))),
                 child: Image.asset(image, height: 148)),
             const SizedBox(height: defaultPadding / 2),
             Row(

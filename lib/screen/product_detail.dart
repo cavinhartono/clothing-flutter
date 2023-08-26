@@ -43,20 +43,40 @@ class ProductDetail extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
+                        width: double.infinity,
+                        decoration: const BoxDecoration(
+                          border: Border(
+                              bottom:
+                                  BorderSide(width: 1, color: Colors.black)),
+                        ),
                         padding: const EdgeInsets.symmetric(
                             vertical: defaultPadding / 2),
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(product.title,
-                                  style: Theme.of(context).textTheme.headline6),
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headline6!
+                                      .copyWith(
+                                          fontFamily: "Montserrat",
+                                          fontWeight: FontWeight.w700)),
+                              const SizedBox(height: 4),
                               Text("IDR. ${product.price.toString()}",
-                                  style: Theme.of(context).textTheme.headline6),
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headline6!
+                                      .copyWith(
+                                          fontFamily: "Montserrat",
+                                          fontWeight: FontWeight.w600)),
                             ])),
                     const Padding(
                         padding:
                             EdgeInsets.symmetric(vertical: defaultPadding / 2),
-                        child: Text("Deskripsi")),
+                        child: Text(
+                            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit at quaerat unde sapiente id nulla, quasi magnam distinctio officiis esse? Similique eius esse molestias.",
+                            textAlign: TextAlign.justify,
+                            style: TextStyle(height: 1.5))),
                     Row(
                       children: [
                         ColorDot(

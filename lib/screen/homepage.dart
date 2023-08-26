@@ -33,17 +33,19 @@ class Homepage extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(defaultPadding),
+        padding: const EdgeInsets.symmetric(
+            vertical: defaultPadding * 2, horizontal: defaultPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               "Explore",
-              style: Theme.of(context)
-                  .textTheme
-                  .headline4!
-                  .copyWith(fontWeight: FontWeight.w500, color: titleColor),
+              style: Theme.of(context).textTheme.headline4!.copyWith(
+                  fontFamily: "Montserrat",
+                  fontWeight: FontWeight.w700,
+                  color: titleColor),
             ),
+            const SizedBox(height: defaultPadding / 2),
             const Text("Best Outfit for You", style: TextStyle(fontSize: 18)),
             const Padding(
               padding: EdgeInsets.symmetric(vertical: defaultPadding),

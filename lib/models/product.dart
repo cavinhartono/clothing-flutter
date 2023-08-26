@@ -17,21 +17,21 @@ List<Product> products = [
   Product(
       image: "assets/images/product_0.png",
       title: "Long Sleeve Shirts",
-      price: 80.0,
+      price: 80000,
       bgColor: const Color(0xfffefbf9)),
   Product(
       image: "assets/images/product_1.png",
       title: "Casual Henley Shirts",
-      price: 99.0,
+      price: 99000,
       bgColor: const Color(0xfffefbf9)),
   Product(
       image: "assets/images/product_2.png",
       title: "Curved Hem Shirts",
-      price: 180.0,
+      price: 180000,
       bgColor: const Color(0xfffefbf9)),
   Product(
       image: "assets/images/product_3.png",
       title: "Casual Nolin",
-      price: 149.0,
+      price: 149000,
       bgColor: const Color(0xfffefbf9)),
 ];
