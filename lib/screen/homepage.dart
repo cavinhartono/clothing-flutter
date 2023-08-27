@@ -10,7 +10,7 @@ import 'package:baju_app/compoments/link.dart';
 import 'package:baju_app/compoments/product_list.dart';
 
 class Homepage extends StatelessWidget {
-  const Homepage({Key? key}) : super(key: key);
+  const Homepage({super.key});
 
   @override
   Widget build(BuildContext context) {
