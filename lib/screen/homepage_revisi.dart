@@ -48,6 +48,10 @@ class _HomepageState extends State<Homepage> {
         ],
       ),
       body: AnimatedContainer(
+        decoration: BoxDecoration(
+            borderRadius: isDrawerMenu
+                ? BorderRadius.circular(defaultPadding)
+                : BorderRadius.circular(0)),
         transform: Matrix4.translationValues(x, y, 0)
           ..scale(isDrawerMenu ? 0.85 : 1)
           ..rotateZ(isDrawerMenu ? -50 : 0),
