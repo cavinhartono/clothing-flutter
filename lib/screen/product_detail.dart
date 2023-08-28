@@ -62,7 +62,8 @@ class ProductDetail extends StatelessWidget {
                                           fontFamily: "Montserrat",
                                           fontWeight: FontWeight.w700)),
                               const SizedBox(height: 4),
-                              Text("IDR. ${product.price.toString()}",
+                              Text(
+                                  CurrencyFormat.convertToIdr(product.price, 2),
                                   style: Theme.of(context)
                                       .textTheme
                                       .headline6!
