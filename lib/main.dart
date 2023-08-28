@@ -1,5 +1,6 @@
 import 'package:baju_app/root.dart';
-import 'package:baju_app/screen/homepage.dart';
+import 'package:baju_app/screen/homepage_revisi.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:baju_app/compoments/drawer_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
           bodyText2: TextStyle(color: Colors.black54),
         ),
       ),
-      home: const Scaffold(body: Stack(children: [Homepage()])),
+      home: const Scaffold(body: Stack(children: [DrawerMenu(), Homepage()])),
     );
   }
 }

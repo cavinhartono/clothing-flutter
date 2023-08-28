@@ -71,13 +71,12 @@ class ProductDetail extends StatelessWidget {
                                           fontFamily: "Montserrat",
                                           fontWeight: FontWeight.w600)),
                             ])),
-                    const Padding(
-                        padding:
-                            EdgeInsets.symmetric(vertical: defaultPadding / 2),
-                        child: Text(
-                            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit at quaerat unde sapiente id nulla, quasi magnam distinctio officiis esse? Similique eius esse molestias.",
+                    Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: defaultPadding / 2),
+                        child: Text(product.desc,
                             textAlign: TextAlign.justify,
-                            style: TextStyle(height: 1.5))),
+                            style: const TextStyle(height: 1.5))),
                     Row(
                       children: [
                         ColorDot(

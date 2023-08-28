@@ -28,6 +28,7 @@ class ProductList extends StatelessWidget {
             borderRadius:
                 BorderRadius.all(Radius.circular(defaultBorderRadius))),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
                 width: double.infinity,
