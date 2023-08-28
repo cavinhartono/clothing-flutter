@@ -40,10 +40,7 @@ class ProductList extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Expanded(
-                  child:
-                      Text(title, style: const TextStyle(color: Colors.black)),
-                ),
+                Text(title, style: const TextStyle(color: Colors.black)),
                 Text(CurrencyFormat.convertToIdr(price, 2),
                     style: Theme.of(context).textTheme.subtitle2),
               ],
