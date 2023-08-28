@@ -30,7 +30,7 @@ class SearchForm extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: primaryColor,
+                    backgroundColor: black500,
                     shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(
                             Radius.circular(defaultBorderRadius)))),

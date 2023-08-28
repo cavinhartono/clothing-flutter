@@ -13,24 +13,25 @@ class _DrawerMenuState extends State<DrawerMenu> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blueGrey,
+      color: black500,
       child: Padding(
           padding: const EdgeInsets.symmetric(
               vertical: defaultPadding * 2, horizontal: defaultPadding),
           child: Column(
             children: [
-              Container(
-                  padding: const EdgeInsets.symmetric(vertical: defaultPadding),
-                  child: Image.asset("assets/images/logo.png")),
-              Column(children: [
-                Row(children: [
-                  Container(
-                    padding: const EdgeInsets.only(right: defaultPadding),
-                    child: SvgPicture.asset("assets/icons/Heart"),
-                  ),
-                  const Text("Home", style: TextStyle(color: Colors.white))
-                ])
-              ])
+              Image.asset("assets/images/logo.png"),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: defaultPadding),
+                child: Column(children: [
+                  Row(children: [
+                    Container(
+                      padding: const EdgeInsets.only(right: defaultPadding),
+                      child: SvgPicture.asset("assets/icons/Heart"),
+                    ),
+                    const Text("Home", style: TextStyle(color: Colors.white))
+                  ])
+                ]),
+              )
             ],
           )),
     );

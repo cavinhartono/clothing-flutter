@@ -6,6 +6,10 @@ const Color bgColor = Color(0xFFFBFBFD);
 const Color titleColor = Color(0xFF222222);
 const Color subtitleColor = Color(0x4A222222);
 
+const Color black300 = Color(0xff7A7A7A);
+const Color black400 = Color(0xff4F4F4F);
+const Color black500 = Color(0xff222222);
+
 const double defaultPadding = 16.0;
 const double defaultBorderRadius = 12.0;
 
