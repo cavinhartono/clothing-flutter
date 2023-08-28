@@ -22,22 +22,6 @@ class SearchForm extends StatelessWidget {
             padding: const EdgeInsets.all(12),
             child: SvgPicture.asset("assets/icons/Search.svg"),
           ), // Search
-          suffixIcon: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: defaultPadding / 2),
-            child: SizedBox(
-              width: 48,
-              height: 48,
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: black500,
-                    shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                            Radius.circular(defaultBorderRadius)))),
-                child: SvgPicture.asset("assets/icons/Filter.svg"),
-              ), // Button
-            ),
-          ),
         ),
       ),
     );
