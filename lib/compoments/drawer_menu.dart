@@ -19,18 +19,18 @@ class _DrawerMenuState extends State<DrawerMenu> {
               vertical: defaultPadding * 2, horizontal: defaultPadding),
           child: Column(
             children: [
-              const Text("COSMIC", style: TextStyle(color: Colors.white)),
-              Padding(
+              Container(
                   padding: const EdgeInsets.symmetric(vertical: defaultPadding),
-                  child: Column(children: [
-                    Row(children: [
-                      Container(
-                        padding: const EdgeInsets.only(right: defaultPadding),
-                        child: SvgPicture.asset("assets/icons/Heart"),
-                      ),
-                      const Text("Home", style: TextStyle(color: Colors.white))
-                    ])
-                  ]))
+                  child: Image.asset("assets/images/logo.png")),
+              Column(children: [
+                Row(children: [
+                  Container(
+                    padding: const EdgeInsets.only(right: defaultPadding),
+                    child: SvgPicture.asset("assets/icons/Heart"),
+                  ),
+                  const Text("Home", style: TextStyle(color: Colors.white))
+                ])
+              ])
             ],
           )),
     );

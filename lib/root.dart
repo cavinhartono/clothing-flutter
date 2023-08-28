@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 const Color primaryColor = Color(0xFF3BA3E8);
 const Color bgColor = Color(0xFFFBFBFD);
@@ -7,3 +8,14 @@ const Color subtitleColor = Color(0x4A222222);
 
 const double defaultPadding = 16.0;
 const double defaultBorderRadius = 12.0;
+
+class CurrencyFormat {
+  static String convertToIdr(dynamic number, int decimalDigit) {
+    NumberFormat currencyFormatter = NumberFormat.currency(
+      locale: 'id',
+      symbol: 'Rp ',
+      decimalDigits: decimalDigit,
+    );
+    return currencyFormatter.format(number);
+  }
+}

@@ -37,14 +37,14 @@ class ProductList extends StatelessWidget {
                         Radius.circular(defaultBorderRadius))),
                 child: Image.asset(image, height: 148)),
             const SizedBox(height: defaultPadding / 2),
-            Row(
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(
                   child:
                       Text(title, style: const TextStyle(color: Colors.black)),
                 ),
-                const SizedBox(width: defaultPadding / 4),
-                Text("IDR. ${price.toString()}",
+                Text(CurrencyFormat.convertToIdr(price, 2),
                     style: Theme.of(context).textTheme.subtitle2),
               ],
             )
